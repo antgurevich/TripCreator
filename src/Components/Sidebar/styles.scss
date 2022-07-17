@@ -1,0 +1,25 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    background: darkcyan;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 9;
+
+    &-header {
+        display: flex;
+        justify-content: center;
+    };
+        
+    &-button-section {
+        margin: auto;
+        width: 50%;
+    };
+
+    
+}
+
+.button:hover {
+    background-color: tan;
+}
