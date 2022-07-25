@@ -6,5 +6,7 @@ export interface SidebarButtons {
 
 export enum SidebarButtonType {
     HOME = 'HOME',
-    ABOUT = 'ABOUT'
+    ABOUT = 'ABOUT',
+    CREATE = 'CREATE',
+    PROFILE = 'PROFILE',
 }

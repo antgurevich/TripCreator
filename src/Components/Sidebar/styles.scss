@@ -1,25 +1,35 @@
 .sidebar {
     position: fixed;
+    height: 100vh;
     top: 0;
-    background: darkcyan;
     left: 0;
-    bottom: 0;
+    background: lightblue;
     width: 200px;
-    z-index: 9;
 
     &-header {
         display: flex;
         justify-content: center;
+        text-decoration: underline;
     };
-        
-    &-button-section {
-        margin: auto;
-        width: 50%;
-    };
-
-    
 }
 
-.button:hover {
-    background-color: tan;
+.sidebar-button-li {
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.sidebar-button-li:hover,
+.sidebar-button-li:active {
+    width: 150px;
+    border-radius: 4px;
+    background-color: wheat;
+}
+
+.sidebar-button-active-link {
+    color: darkblue;
+    text-decoration: none;
+    
 }

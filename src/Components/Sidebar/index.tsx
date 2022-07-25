@@ -1,5 +1,4 @@
-import React from 'react'
-import { SidebarButtons, SidebarButtonType } from '../types'
+import { SidebarButtons, SidebarButtonType } from '../Utils/types'
 import SidebarButton from './SidebarButton';
 import "./styles.scss"
 
@@ -8,13 +7,23 @@ function makeButtons(
     return [
       {
         type: SidebarButtonType.HOME,
-        name: "Home",
-        url: "",
+        name: 'Home',
+        url: '/',
+      },
+      {
+        type: SidebarButtonType.CREATE,
+        name: 'Create',
+        url: '/createtrip',
+      },
+      {
+        type: SidebarButtonType.PROFILE,
+        name: 'Profile',
+        url: '/profile',
       },
       {
         type: SidebarButtonType.ABOUT,
-        name: "About",
-        url: "",
+        name: 'About',
+        url: '/about',
       },
     ];
 };
@@ -22,7 +31,7 @@ function makeButtons(
 const baseClass = 'sidebar';
 
 export const Sidebar = () => {
-    return (
+  return (
       <div className={baseClass}>
         <div className={`${baseClass}-header`}>
           <h1>TripCreator</h1>
@@ -31,8 +40,11 @@ export const Sidebar = () => {
           {makeButtons().map((button) => (
             <SidebarButton
               key={button.name}
+              button={button}
               name={button.name}
               path={button.url}
+              type={button.type}
+              isActive={true}
             />
           ))}
         </div>

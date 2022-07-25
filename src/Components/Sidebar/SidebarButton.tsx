@@ -1,14 +1,35 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from "react-router-dom";
+import { SidebarButtons, SidebarButtonType } from '../Utils/types';
 
 export interface Props {
-    readonly name: string;
-    readonly path: string;
+  readonly button: SidebarButtons; 
+  readonly name: string;
+  readonly path: string;
+  readonly type: SidebarButtonType;
+  readonly isActive: boolean;
 }
 
-const baseClass = 'button'
+const baseClass = 'sidebar-button'
 
 export const SidebarButton: React.FC<Props> = (props) => {
-    return(<h2 className={baseClass}>{props.name}</h2>)
-}
+  const isSelected = (child: SidebarButtons): boolean => {
+    return child.type === props.type;
+  } 
+  return (
+    <nav>
+      <li className={`${baseClass}-li`} key={props.name}>
+        <NavLink
+          className={`${baseClass}-active-link
+                      ${isSelected(props.button) ? "selected" : ""}
+                    `}
+          to={props.path}
+        >
+          {props.name}
+        </NavLink>
+      </li>
+    </nav>
+  );
+};
 
 export default SidebarButton
