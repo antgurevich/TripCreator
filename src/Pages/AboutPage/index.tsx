@@ -1,7 +1,13 @@
 import React from "react";
 
+const baseClass = 'aboutpage'
+
 export const AboutPage = () => {
-    return (<div>About page</div>)
+    return( 
+        <div className={`${baseClass}`}>
+            About Page
+        </div>
+    );
 }
 
 export default AboutPage

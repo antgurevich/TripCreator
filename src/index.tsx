@@ -7,6 +7,7 @@ import ProfilePage from './Pages/ProfilePage';
 import { AboutPage } from './Pages/AboutPage';
 import MainPage from './Pages/MainPage';
 import Sidebar from './Components/Sidebar';
+import "./styles.scss"
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(
@@ -18,14 +19,14 @@ const baseClass = 'app'
 root.render(
   <React.StrictMode>
     <Router>
-      <div className={`${baseClass}`}>
       <Sidebar />
-      <Routes>
-        <Route path="/" element={<MainPage/>} />
-        <Route path="/createtrip" element={<CreatePage />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
+      <div className={`${baseClass}`}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/createtrip" element={<CreatePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
       </div>
     </Router>
   </React.StrictMode>
